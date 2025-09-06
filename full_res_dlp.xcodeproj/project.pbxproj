@@ -23,26 +23,84 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		D7E7BAC52E6BC3F8001DC071 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		D7E7BA6A2E6BBB91001DC071 /* full_res_dlp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = full_res_dlp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D7E7BA782E6BBB93001DC071 /* full_res_dlpTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = full_res_dlpTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D7E7BA822E6BBB93001DC071 /* full_res_dlpUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = full_res_dlpUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7E7BACC2E6BC6E0001DC071 /* full_res_dlpTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = full_res_dlpTests.xctest; path = /Users/dev/Projects/full_res_dlp/build/Debug/full_res_dlp.app/Contents/PlugIns/full_res_dlpTests.xctest; sourceTree = "<absolute>"; };
+		D7E7BACD2E6BC6E0001DC071 /* full_res_dlpUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = full_res_dlpUITests.xctest; path = "/Users/dev/Projects/full_res_dlp/build/Debug/full_res_dlpUITests-Runner.app/Contents/PlugIns/full_res_dlpUITests.xctest"; sourceTree = "<absolute>"; };
+		D7E7BADC2E6BCA2E001DC071 /* full_res_dlp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = full_res_dlp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		D7E7BAC92E6BC64C001DC071 /* Exceptions for "Source" folder in "full_res_dlp" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				BridgeFile.swift,
+			);
+			target = D7E7BA692E6BBB91001DC071 /* full_res_dlp */;
+		};
+		D7E7BADE2E6BCA3D001DC071 /* Exceptions for "Resources" folder in "full_res_dlp" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			attributesByRelativePath = {
+				Python.xcframework = (Required, );
+			};
+			target = D7E7BA692E6BBB91001DC071 /* full_res_dlp */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+		D7E7BAE12E6BCECF001DC071 /* Exceptions for "Resources" folder in "Copy Bundle Resources" phase from "full_res_dlp" target */ = {
+			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
+			buildPhase = D7E7BA682E6BBB91001DC071 /* Resources */;
+			membershipExceptions = (
+				Python.xcframework,
+			);
+		};
+		D7E7BAE52E6BCEF2001DC071 /* Exceptions for "Resources" folder in "Embed Frameworks" phase from "full_res_dlp" target */ = {
+			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
+			attributesByRelativePath = {
+				Python.xcframework = (CodeSignOnCopy, RemoveHeadersOnCopy, );
+			};
+			buildPhase = D7E7BAC52E6BC3F8001DC071 /* Embed Frameworks */;
+			membershipExceptions = (
+				Python.xcframework,
+			);
+		};
+/* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		D7E7BA6C2E6BBB91001DC071 /* full_res_dlp */ = {
+		D7E7BA6C2E6BBB91001DC071 /* Source */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = full_res_dlp;
+			exceptions = (
+				D7E7BAC92E6BC64C001DC071 /* Exceptions for "Source" folder in "full_res_dlp" target */,
+			);
+			path = Source;
 			sourceTree = "<group>";
 		};
-		D7E7BA7B2E6BBB93001DC071 /* full_res_dlpTests */ = {
+		D7E7BAB32E6BC0CB001DC071 /* Resources */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = full_res_dlpTests;
+			exceptions = (
+				D7E7BADE2E6BCA3D001DC071 /* Exceptions for "Resources" folder in "full_res_dlp" target */,
+				D7E7BAE12E6BCECF001DC071 /* Exceptions for "Resources" folder in "Copy Bundle Resources" phase from "full_res_dlp" target */,
+				D7E7BAE52E6BCEF2001DC071 /* Exceptions for "Resources" folder in "Embed Frameworks" phase from "full_res_dlp" target */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
-		D7E7BA852E6BBB93001DC071 /* full_res_dlpUITests */ = {
+		D7E7BAB52E6BC144001DC071 /* Debug */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = full_res_dlpUITests;
+			path = Debug;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -75,21 +133,11 @@
 		D7E7BA612E6BBB91001DC071 = {
 			isa = PBXGroup;
 			children = (
-				D7E7BA6C2E6BBB91001DC071 /* full_res_dlp */,
-				D7E7BA7B2E6BBB93001DC071 /* full_res_dlpTests */,
-				D7E7BA852E6BBB93001DC071 /* full_res_dlpUITests */,
-				D7E7BA6B2E6BBB91001DC071 /* Products */,
+				D7E7BAB32E6BC0CB001DC071 /* Resources */,
+				D7E7BA6C2E6BBB91001DC071 /* Source */,
+				D7E7BAB52E6BC144001DC071 /* Debug */,
+				D7E7BADC2E6BCA2E001DC071 /* full_res_dlp.app */,
 			);
-			sourceTree = "<group>";
-		};
-		D7E7BA6B2E6BBB91001DC071 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				D7E7BA6A2E6BBB91001DC071 /* full_res_dlp.app */,
-				D7E7BA782E6BBB93001DC071 /* full_res_dlpTests.xctest */,
-				D7E7BA822E6BBB93001DC071 /* full_res_dlpUITests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -102,19 +150,21 @@
 				D7E7BA662E6BBB91001DC071 /* Sources */,
 				D7E7BA672E6BBB91001DC071 /* Frameworks */,
 				D7E7BA682E6BBB91001DC071 /* Resources */,
+				D7E7BAC52E6BC3F8001DC071 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				D7E7BA6C2E6BBB91001DC071 /* full_res_dlp */,
+				D7E7BA6C2E6BBB91001DC071 /* Source */,
+				D7E7BAB32E6BC0CB001DC071 /* Resources */,
 			);
 			name = full_res_dlp;
 			packageProductDependencies = (
 			);
 			productName = full_res_dlp;
-			productReference = D7E7BA6A2E6BBB91001DC071 /* full_res_dlp.app */;
+			productReference = D7E7BADC2E6BCA2E001DC071 /* full_res_dlp.app */;
 			productType = "com.apple.product-type.application";
 		};
 		D7E7BA772E6BBB93001DC071 /* full_res_dlpTests */ = {
@@ -130,14 +180,11 @@
 			dependencies = (
 				D7E7BA7A2E6BBB93001DC071 /* PBXTargetDependency */,
 			);
-			fileSystemSynchronizedGroups = (
-				D7E7BA7B2E6BBB93001DC071 /* full_res_dlpTests */,
-			);
 			name = full_res_dlpTests;
 			packageProductDependencies = (
 			);
 			productName = full_res_dlpTests;
-			productReference = D7E7BA782E6BBB93001DC071 /* full_res_dlpTests.xctest */;
+			productReference = D7E7BACC2E6BC6E0001DC071 /* full_res_dlpTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		D7E7BA812E6BBB93001DC071 /* full_res_dlpUITests */ = {
@@ -154,13 +201,13 @@
 				D7E7BA842E6BBB93001DC071 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				D7E7BA852E6BBB93001DC071 /* full_res_dlpUITests */,
+				D7E7BAB52E6BC144001DC071 /* Debug */,
 			);
 			name = full_res_dlpUITests;
 			packageProductDependencies = (
 			);
 			productName = full_res_dlpUITests;
-			productReference = D7E7BA822E6BBB93001DC071 /* full_res_dlpUITests.xctest */;
+			productReference = D7E7BACD2E6BC6E0001DC071 /* full_res_dlpUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -196,7 +243,7 @@
 			mainGroup = D7E7BA612E6BBB91001DC071;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = D7E7BA6B2E6BBB91001DC071 /* Products */;
+			productRefGroup = D7E7BA612E6BBB91001DC071;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -384,6 +431,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 15.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
 			};
@@ -394,13 +442,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = full_res_dlp/full_res_dlp.entitlements;
+				CODE_SIGN_ENTITLEMENTS = /Users/dev/Projects/full_res_dlp/Resources/full_res_dlp.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = NR3J8ZR2BQ;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Resources/Python.xcframework/macos-arm64_x86_64/",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -421,13 +475,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = full_res_dlp/full_res_dlp.entitlements;
+				CODE_SIGN_ENTITLEMENTS = /Users/dev/Projects/full_res_dlp/Resources/full_res_dlp.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = NR3J8ZR2BQ;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Resources/Python.xcframework/macos-arm64_x86_64/",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
