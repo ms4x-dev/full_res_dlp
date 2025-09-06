@@ -14,10 +14,10 @@ def debug_log(message, success=None):
     print(f"{prefix}{message}")
 
 # --- Use hard-coded throwaway credentials for testing ---
-username = 'rg3825272@gmail.com'
-password = 'vewmiz-pamFyn-5dyfci'
-debug_log(f"Username set: {'Yes' if username else 'No'}")
-debug_log(f"Password set: {'Yes' if password else 'No'}")
+#username = 'insert username here'
+#password = 'insert password here'
+#debug_log(f"Username set: {'Yes' if username else 'No'}")
+#debug_log(f"Password set: {'Yes' if password else 'No'}")
 
 if len(sys.argv) < 2:
     debug_log("Usage: yt_download.py <YouTube URL>", success=False)

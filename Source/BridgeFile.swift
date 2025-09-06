@@ -5,92 +5,45 @@
 //  Created by Richard on 6/9/2025.
 //
 
-import SwiftUI
+import Foundation
 
-struct ContentView: View {
-    @State private var url: String = ""
-    @State private var logText: String = ""
-    @State private var isDownloading: Bool = false
+class PythonBridge {
 
-    var body: some View {
-        VStack(alignment: .leading, spacing: 15) {
-            Text("Enter URL to download:")
-                .font(.headline)
+    static let shared = PythonBridge()
 
-            TextField("URL", text: $url)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding(.trailing)
+    private init() {}
 
-            Button(action: startDownload) {
-                HStack {
-                    Text(isDownloading ? "Downloading..." : "Start Download")
-                    if isDownloading {
-                        ProgressView()
-                            .progressViewStyle(CircularProgressViewStyle())
-                    }
-                }
-            }
-            .disabled(isDownloading || url.isEmpty)
-
-            ScrollView {
-                Text(logText)
-                    .font(.system(.body, design: .monospaced))
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding()
-            }
-            .border(Color.gray)
+    func runPythonScript(withURL url: String, completion: @escaping (String?, String?) -> Void) {
+        guard let scriptPath = Bundle.main.path(forResource: "debug_log_file_inc", ofType: "py") else {
+            completion(nil, "Python script not found in bundle.")
+            return
         }
-        .padding()
-        .frame(minWidth: 600, minHeight: 400)
-    }
-
-    func startDownload() {
-        guard !url.isEmpty else { return }
-        isDownloading = true
-        logText = ""
-
-        // Path to Python executable
-        let pythonPath = "/Library/Frameworks/Python.framework/Versions/3.13/bin/python3"
-        // Path to your yt_download.py
-        let scriptPath = Bundle.main.path(forResource: "yt_download", ofType: "py") ?? ""
 
         let process = Process()
-        process.executableURL = URL(fileURLWithPath: pythonPath)
-        process.arguments = [scriptPath, url]
+        process.executableURL = URL(fileURLWithPath: "/usr/bin/python3") // system Python or path to Python framework
+        process.arguments = [scriptPath]
 
-        let pipe = Pipe()
-        process.standardOutput = pipe
-        process.standardError = pipe
+        // If you want to inject URL dynamically:
+        process.environment = ["TARGET_URL": url]
 
-        let handle = pipe.fileHandleForReading
-        handle.readabilityHandler = { fileHandle in
-            if let line = String(data: fileHandle.availableData, encoding: .utf8) {
-                DispatchQueue.main.async {
-                    self.logText += line
-                }
-            }
+        let outputPipe = Pipe()
+        let errorPipe = Pipe()
+        process.standardOutput = outputPipe
+        process.standardError = errorPipe
+
+        do {
+            try process.run()
+        } catch {
+            completion(nil, "Failed to launch Python: \(error)")
+            return
         }
 
-        DispatchQueue.global(qos: .userInitiated).async {
-            do {
-                try process.run()
-                process.waitUntilExit()
-                DispatchQueue.main.async {
-                    self.isDownloading = false
-                    self.logText += "\nDownload finished with exit code \(process.terminationStatus)\n"
-                }
-            } catch {
-                DispatchQueue.main.async {
-                    self.isDownloading = false
-                    self.logText += "\nFailed to start process: \(error.localizedDescription)\n"
-                }
-            }
+        process.terminationHandler = { _ in
+            let outputData = outputPipe.fileHandleForReading.readDataToEndOfFile()
+            let errorData = errorPipe.fileHandleForReading.readDataToEndOfFile()
+            let output = String(data: outputData, encoding: .utf8)
+            let error = String(data: errorData, encoding: .utf8)
+            completion(output, error)
         }
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
     }
 }

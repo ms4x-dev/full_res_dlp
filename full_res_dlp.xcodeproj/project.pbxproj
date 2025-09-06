@@ -43,13 +43,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		D7E7BAC92E6BC64C001DC071 /* Exceptions for "Source" folder in "full_res_dlp" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				BridgeFile.swift,
-			);
-			target = D7E7BA692E6BBB91001DC071 /* full_res_dlp */;
-		};
 		D7E7BADE2E6BCA3D001DC071 /* Exceptions for "Resources" folder in "full_res_dlp" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			attributesByRelativePath = {
@@ -82,9 +75,6 @@
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		D7E7BA6C2E6BBB91001DC071 /* Source */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				D7E7BAC92E6BC64C001DC071 /* Exceptions for "Source" folder in "full_res_dlp" target */,
-			);
 			path = Source;
 			sourceTree = "<group>";
 		};
